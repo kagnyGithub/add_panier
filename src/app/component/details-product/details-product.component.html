@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card mb-3" *ngIf="product">
+        <div class="card-header bg-primary" style="font-size: 30px;">Detail product</div>
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="{{product.image}}" class="img-fluid rounded-start" alt="..." style="height: 400px; width:90%">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body" style="font-size: 15px;">
+              <h5 class="card-title"><strong style="font-size:30px;">Title :</strong>{{product.title}}</h5>
+              <p class="card-text" style="word-wrap: break-word;"><strong style="font-size:30px;">Description  :</strong>{{product.description}}</p>
+              <p class="card-text"><small class="text-muted"><strong style="font-size:30px;">Price: </strong>{{product.price}}$</small></p>
+              <button class="btn btn-primary  boutton" (click)="addPanier(product)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-secondary" >
+            <a href=""><i class="fas fa-chevron-circle-left"  style="font-size: 50px; color:white"></i></a>
+        </div>
+      </div>
+</div>

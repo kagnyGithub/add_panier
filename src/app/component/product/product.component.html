@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card card-top">
+        <div class=" d-flex">
+            <div class="item">
+            <a (click)="filterProduct('')">
+                <img style="margin-top: 15px; " src="assets/images/allproduct.png" alt="">
+                <h6>All products</h6>
+            </a>
+            
+            </div>
+            <div class="item">
+                <a (click)="filterProduct('electronics')">
+                    <img  style="margin-top: 15px; " src="assets/images/electronic.jpg" alt="">
+                    <h6>Electronics</h6>
+                </a>
+                
+            </div>
+            <div class="item">
+                <a (click)="filterProduct('fashion')">
+                    <img style="margin-top: 15px; " src="assets/images/fashion.jpg" alt="">
+                    <h6>Fashions</h6>
+                </a>
+               
+            </div>
+            <div class="item">
+                <a (click)="filterProduct('jewelery')">
+                    <img style="margin-top: 15px;  " src="assets/images/jewelery.jpg" alt="">
+                    <h6>Accessoires</h6>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of productFilter | filter:searchKey:'title' ">
+            <div class="card" style="width: 18rem;">
+                <span class="card-title " ><a [routerLink]="['/products',item.id]"><i class="fas fa-chevron-circle-right"  style="font-size: 30px; color:blue; "></i></a></span>
+                <img style="margin-top:15px; height: 300px;" src="{{item.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; max-width: 100ch;">{{item.title}}</h5>
+                  <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; max-width: 100ch;">{{item.description}}</p>
+                  <p class="card-text" > <strong>Price :</strong> {{item.price}}$ </p>
+                  <button class="btn btn-primary" (click)="addPanier(item)">Add to card</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

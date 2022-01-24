@@ -1,0 +1,16 @@
+.card{
+    margin-top: 60px;
+}
+image{
+    transition: transform .2s;
+    padding: 50px;
+}
+image:hover{
+    transform: scale(1.5); 
+}
+.boutton{
+    width: 300px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+}
